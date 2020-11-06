@@ -1,18 +1,31 @@
+#
+#  Created by teambition-ios on 2020/7/27.
+#  Copyright © 2020 teambition. All rights reserved.
+#   
+
 Pod::Spec.new do |s|
 
-    s.name                  = "RRuleSwift"
-    s.version               = "0.5.0"
-    s.summary               = "Swift RRuleSwift"
-    s.description           = <<-DESC
-                                RRuleSwift
-                             DESC
-    s.homepage              = "https://google.com"
-    s.license               = { :type => "Commercial", :text => "Copyright 2017" }
-    s.author                = "Juan Pablo Crespi"
-  
-    s.platform        	    = :ios, "10.0"
-    s.requires_arc    	    = true
-    s.source          	    = { "path" => "." }
-    s.source_files          = 'Sources/**/*.{swift,js}'
+    s.name                      = 'RRuleSwift'
+    s.version                   = '0.5.1'
+    s.summary                   = 'Swift rrule library for working with recurrence rules of calendar dates.'
+    s.description               = <<-DESC
+    Swift rrule library for working with recurrence rules of calendar dates.
+                                DESC
+
+    s.homepage                  = 'https://github.com/jpcrespi/RRuleSwift'
+    s.license                   = { :type => 'MIT', :file => 'LICENSE.md' }
+    s.author                    = { 'teambition mobile' => 'teambition-mobile@alibaba-inc.com' }
+    s.source                    = { :git => 'https://github.com/jpcrespi/RRuleSwift.git', :tag => s.version.to_s }
+
+    s.swift_version             = '5.0'
+    s.ios.deployment_target     = '8.0'
+    s.watchos.deployment_target = '2.0'
+
+    s.ios.frameworks            = 'Foundation', 'EventKit', 'JavaScriptCore'
+    s.watchos.frameworks        = 'Foundation', 'EventKit'
+
+    s.source_files              = 'Sources/*.{swift}'
+    s.resources                 = 'Sources/lib/*.{js}'
+    s.watchos.exclude_files     = 'Sources/Iterators.swift', 'JavaScriptBridge.swift'
 
 end
